@@ -1,4 +1,3 @@
-#Requires -RunAsAdministrator
 function Add-Cursor {
     if (!(Test-Path -Path "$env:SystemRoot\cursors\")) {
         New-Item -Path "$env:SystemRoot\cursors" -ItemType "directory"

@@ -1,4 +1,3 @@
-#Requires -RunAsAdministrator
 function Invoke-WUServerBypass {
     #Enable WU
     if (!(Test-Path -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU")) {
