@@ -4,5 +4,5 @@ function Set-DefaultBrowser {
     Expand-Archive -LiteralPath $env:TEMP\SetDefaultBrowser.zip -DestinationPath $env:TEMP
     Start-Process $env:TEMP\SetDefaultBrowser\SetDefaultBrowser.exe chrome
     Remove-Item $env:TEMP\SetDefaultBrowser.zip
-    Remove-Item -r $env:TEMP\SetDefaultBrowser
+    Remove-Item -Recurse $env:TEMP\SetDefaultBrowser
 }
