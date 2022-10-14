@@ -1,8 +1,11 @@
-<#
-    Prerequisites:
-    * VSCode
-#>
 function Install-CodeExtensions {
+    try {
+        code --version
+    }
+    catch [System.Management.Automation.CommandNotFoundException] {
+        throw "Please run `"Install-VSCode`" before running this command."
+    }
+
     $CodeExtensions = @(
         "bagetx.inf",
         "bungcip.better-toml",
