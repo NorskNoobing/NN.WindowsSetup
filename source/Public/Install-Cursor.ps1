@@ -1,4 +1,9 @@
 function Install-Cursor {
+    Invoke-gsudoCheck
+    Invoke-gsudo {
+        Add-Cursor
+    }
+
     Set-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name "(Default)" -Value "material_design_dark"
     Set-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name "AppStarting" -Value "%SystemRoot%\cursors\material_design_dark\work.ani"
     Set-ItemProperty -Path "HKCU:\Control Panel\Cursors" -Name "Arrow" -Value "%SystemRoot%\cursors\material_design_dark\pointer.cur"
