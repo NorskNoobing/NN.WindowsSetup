@@ -1,6 +1,6 @@
 function Install-Choco {
     try {
-        choco --version
+        $null = choco --version
     }
     catch [System.Management.Automation.CommandNotFoundException] {
         if (Test-Path "$env:ProgramData\chocolatey\bin\choco.exe") {
