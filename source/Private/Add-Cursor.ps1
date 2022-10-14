@@ -1,5 +1,6 @@
 function Add-Cursor {
-    if ([bool](([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match "S-1-5-32-544")) {
+    [bool]$runAsAdmin = ([System.Security.Principal.WindowsIdentity]::GetCurrent()).groups -match "S-1-5-32-544"
+    if ($runAsAdmin) {
         if (!(Test-Path -Path "$env:SystemRoot\cursors\")) {
             New-Item -Path "$env:SystemRoot\cursors" -ItemType "directory"
         }
