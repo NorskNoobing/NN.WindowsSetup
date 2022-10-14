@@ -28,7 +28,7 @@ function Install-RSAT {
             }
         }
         catch [System.Management.Automation.CommandNotFoundException] {
-            throw "Please run Install-gsudo before running this command."
+            throw "Please run `"Install-gsudo`" before running this command."
         }
     }
 }
