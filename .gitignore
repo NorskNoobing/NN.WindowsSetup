@@ -1,2 +1,4 @@
-[Oo]utput/
-source/*.psd1
+*.psd1
+!spec/*.psd1
+*.psm1
+!spec/*.psm1

@@ -1,0 +1,23 @@
+name: Publish module
+on:
+  push:
+    branches:    
+      - main
+
+jobs:
+    build:
+      name: Publish module
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout
+          uses: actions/checkout@v1
+        - name: Build module
+          env:
+            COMMIT_RELEASE_NOTES: ${{ github.event.head_commit.message }}
+          run: .\.modulescripts\Build-Module.ps1
+          shell: pwsh
+        - name: Publish module
+          env:
+            NUGET_APIKEY: ${{ secrets.NUGET_APIKEY }}
+          run: .\.modulescripts\Publish-Module.ps1
+          shell: pwsh
