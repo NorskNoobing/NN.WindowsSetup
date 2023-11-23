@@ -1,8 +1,10 @@
 name: Publish module
 on:
   push:
-    branches:    
+    branches:
       - main
+    paths:
+      - 'source/**'
 
 jobs:
     build:
